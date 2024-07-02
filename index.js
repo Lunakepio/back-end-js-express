@@ -1,6 +1,17 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
+
+
+const corsOptions = {
+    origin: 'http://localhost:5173', 
+    methods: 'GET,POST,PUT,DELETE',
+    optionsSuccessStatus: 200 
+};
+
+app.use(cors(corsOptions));
 const PORT = 3000;
+
 
 app.use(express.json());
 
